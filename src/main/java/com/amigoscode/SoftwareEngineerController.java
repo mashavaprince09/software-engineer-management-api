@@ -20,7 +20,7 @@ public class SoftwareEngineerController {
     }
 
     @GetMapping("{id}")
-    public SoftwareEngineer getEngineerById(@PathVariable Integer id){
+    public SoftwareEngineerDTO getEngineerById(@PathVariable Integer id){
         return softwareEngineerService.getSoftwareEngineerById(id);
     }
 
@@ -28,4 +28,11 @@ public class SoftwareEngineerController {
     public void addNewSoftwareEngineer(@RequestBody SoftwareEngineer softwareEngineer){
         softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
     }
+
+    @PutMapping("{id}")
+    public String updateSoftwareEngineer(@PathVariable Integer id, @RequestBody SoftwareEngineer softwareEngineer) {
+        softwareEngineerService.updateSoftwareEngineer(id, softwareEngineer);
+        return "Done";
+    }
+
 }
