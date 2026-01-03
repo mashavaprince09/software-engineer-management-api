@@ -15,13 +15,13 @@ public class SoftwareEngineerController {
     }
 
     @GetMapping
-    public List<SoftwareEngineer> getAllEngineers(){
+    public List<SoftwareEngineerDTO> getAllEngineers(){
         return softwareEngineerService.getAllSoftwareEngineers();
     }
 
     @GetMapping("{id}")
     public SoftwareEngineer getEngineerById(@PathVariable Integer id){
-        return softwareEngineerService.getSoftwareEngineerByI(id);
+        return softwareEngineerService.getSoftwareEngineerById(id);
     }
 
     @PostMapping
