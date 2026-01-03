@@ -35,8 +35,10 @@ public class SoftwareEngineerService {
                 .findById(id)
                 .orElseThrow(() -> new IllegalStateException("Engineer not found"));
 
-        engineer.setName(softwareEngineer.getName());
-        engineer.setTechStack(softwareEngineer.getTechStack());
+        if (softwareEngineer.getName()!=null)
+            engineer.setName(softwareEngineer.getName());
+        if (softwareEngineer.getTechStack()!=null)
+            engineer.setTechStack(softwareEngineer.getTechStack());
 
         softwareEngineerRepository.save(engineer);
 
