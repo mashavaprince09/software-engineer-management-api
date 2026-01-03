@@ -6,21 +6,21 @@ import java.util.List;
 
 @Service
 public class SoftwareEngineerService {
-    private final SoftwareEngineeerRepository softwareEngineeerRepository;
+    private final SoftwareEngineerRepository softwareEngineerRepository;
 
-    public SoftwareEngineerService(SoftwareEngineeerRepository softwareEngineeerRepository) {
-        this.softwareEngineeerRepository = softwareEngineeerRepository;
+    public SoftwareEngineerService(SoftwareEngineerRepository softwareEngineerRepository) {
+        this.softwareEngineerRepository = softwareEngineerRepository;
     }
 
-    public List<SoftwareEngineer> getAllSoftwareEngineers() {
-        return softwareEngineeerRepository.findAll();
+    public List<SoftwareEngineerDTO> getAllSoftwareEngineers() {
+        return softwareEngineerRepository.findAll().stream().map(SoftwareEngineerDTO::new).toList();
     }
 
     public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer) {
-        softwareEngineeerRepository.save(softwareEngineer);
+        softwareEngineerRepository.save(softwareEngineer);
     }
 
-    public SoftwareEngineer getSoftwareEngineerByI(Integer id) {
-        return softwareEngineeerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id+" not found"));
+    public SoftwareEngineer getSoftwareEngineerById(Integer id) {
+        return softwareEngineerRepository.findById(id).orElseThrow(() -> new IllegalStateException(id+" not found"));
     }
 }
