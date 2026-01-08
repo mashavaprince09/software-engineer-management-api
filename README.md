@@ -27,7 +27,7 @@ A RESTful API built with Spring Boot for managing software engineer records. Thi
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/mashavaprince09/software-engineer-management-api
    cd software-engineer-management-api
    ```
 
